@@ -2,7 +2,7 @@ import 'package:git_mobile/src/features/home_screen/home_screen.dart';
 import '../../src/routing/route_constants.dart';
 import 'package:flutter/material.dart';
 
-import '../features/splash/screen/splash_screen.dart';
+import '../features/splash/splash_screen.dart';
 
 class RouteManager {
   MaterialPageRoute<dynamic> route(RouteSettings settings) {
