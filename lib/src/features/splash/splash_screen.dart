@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:git_mobile/src/routing/route_constants.dart';
+import 'package:git_mobile/src/ui_utils/app_assets.dart';
+import 'package:git_mobile/src/ui_utils/common_asset_image.dart';
+import 'package:size_setter/size_setter.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _moveToNextPage() {
-    Navigator.of(context).pushReplacementNamed(RouteConstants.homeScreen);
+    Navigator.of(context).pushReplacementNamed(RouteConstants.loginScreen);
   }
 
   @override
@@ -28,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
         body: Container(
       alignment: Alignment.center,
-      child: const Icon(Icons.airplane_ticket),
+      child: CommonAssetImage(image: AppAssets.gitLogo,width: 200.w,),
     ));
   }
 }

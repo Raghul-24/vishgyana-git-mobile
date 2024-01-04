@@ -16,7 +16,7 @@ abstract class TextStyles {
       fontFamily: Fonts.medium
   );
   static const regularSubTitleText = TextStyle(
-      color: AppColors.primaryTextColor,
+      color: AppColors.secondaryTextColor,
       fontSize: UIDimens.size16,
       fontFamily: Fonts.regular
   );
