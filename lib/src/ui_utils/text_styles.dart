@@ -36,7 +36,7 @@ abstract class TextStyles {
       fontFamily: Fonts.medium
   );
   static const regularSmallText = TextStyle(
-      color: AppColors.primaryTextColor,
+      color: AppColors.secondaryTextColor,
       fontSize: UIDimens.size12,
       fontFamily: Fonts.regular
   );

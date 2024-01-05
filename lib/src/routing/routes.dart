@@ -1,5 +1,6 @@
 import 'package:git_mobile/src/features/home_screen/home_screen.dart';
 import 'package:git_mobile/src/features/login_screen/login_screen.dart';
+import 'package:git_mobile/src/features/project_repo_screen/project_screen.dart';
 import '../../src/routing/route_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,10 @@ class RouteManager {
         return MaterialPageRoute(
             settings: const RouteSettings(name: RouteConstants.homeScreen),
             builder: (context) => const HomeScreen());
+      case RouteConstants.projectScreen:
+        return MaterialPageRoute(
+            settings: const RouteSettings(name: RouteConstants.projectScreen),
+            builder: (context) => const ProjectScreen());
       case RouteConstants.loginScreen:
         return MaterialPageRoute(
             settings: const RouteSettings(name: RouteConstants.loginScreen),

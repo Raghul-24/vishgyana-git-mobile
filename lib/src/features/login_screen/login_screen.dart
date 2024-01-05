@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_mobile/src/features/home_screen/home_screen.dart';
+import 'package:git_mobile/src/routing/route_constants.dart';
 import 'package:git_mobile/src/ui_utils/app_assets.dart';
 import 'package:git_mobile/src/ui_utils/common_asset_image.dart';
 import 'package:git_mobile/src/ui_utils/text_styles.dart';
@@ -23,8 +24,7 @@ class LoginScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width / 1.2.w,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()));
+          Navigator.pushNamed(context, RouteConstants.homeScreen);
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primaryColor,
