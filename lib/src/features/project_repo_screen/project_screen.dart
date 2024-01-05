@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:git_mobile/src/features/project_repo_screen/project_list_tile.dart';
-import 'package:git_mobile/src/ui_utils/app_assets.dart';
-import 'package:git_mobile/src/ui_utils/common_asset_image.dart';
-import 'package:git_mobile/src/ui_utils/common_network_image.dart';
 import 'package:git_mobile/src/ui_utils/text_styles.dart';
 import 'package:git_mobile/src/utils/src/colors/app_colors.dart';
 import 'package:size_setter/size_setter.dart';

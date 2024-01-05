@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:git_mobile/firebase_options.dart';
 import 'package:git_mobile/src/providers/app_providers.dart';
 import 'package:git_mobile/src/services/local_storage/key_value_storage_base.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +14,9 @@ Future<void> main() async {
 
   runZonedGuarded<Future<void>>(() async {
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     await KeyValueStorageBase.init();
     runApp(DevicePreview(
       enabled: false,

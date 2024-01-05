@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "340277784902",
+    "project_id": "git-mobile-vgts",
+    "storage_bucket": "git-mobile-vgts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340277784902:android:c85bf70537f57370df7547",
+        "android_client_info": {
+          "package_name": "com.example.git_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxkDGBl9NqlgoxT6K32Ge_5VKHKC5dVpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
