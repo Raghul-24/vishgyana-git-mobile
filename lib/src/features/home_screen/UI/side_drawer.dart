@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:git_mobile/src/features/home_screen/common_list_tile.dart';
+import 'package:git_mobile/src/features/home_screen/UI/common_list_tile.dart';
+import 'package:git_mobile/src/routing/route_constants.dart';
+import 'package:git_mobile/src/services/local_storage/key_value_storage_service.dart';
 import 'package:git_mobile/src/ui_utils/app_assets.dart';
 import 'package:git_mobile/src/ui_utils/common_network_image.dart';
 import 'package:git_mobile/src/utils/src/colors/app_colors.dart';
@@ -12,11 +14,12 @@ class SideDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final KeyValueStorageService keyValueStorageService =
+    KeyValueStorageService();
     return Drawer(
       elevation: 0,
       backgroundColor: AppColors.whiteColor,
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
         children: [
            DrawerHeader(
             decoration: BoxDecoration(
@@ -47,6 +50,31 @@ class SideDrawer extends StatelessWidget {
               ),
             ),
             title: Text("VGTS"),
+          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child:Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 20),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: (){
+                      keyValueStorageService.resetKeys();
+                      Navigator.of(context).pushReplacementNamed(RouteConstants.loginScreen);
+                      },
+                      style: ButtonStyle(
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                              )
+                          )
+                      ),
+                    child: Text("Logout"),
+                  ),
+                ),
+              )
+            ),
           ),
         ],
       ),

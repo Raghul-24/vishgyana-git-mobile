@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_mobile/src/routing/route_constants.dart';
+import 'package:git_mobile/src/services/local_storage/key_value_storage_service.dart';
 import 'package:git_mobile/src/ui_utils/app_assets.dart';
 import 'package:git_mobile/src/ui_utils/common_asset_image.dart';
 import 'package:git_mobile/src/ui_utils/text_styles.dart';
@@ -15,6 +16,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final KeyValueStorageService _keyValueStorageService =
+  KeyValueStorageService();
   bool isSignSuccess = false;
   @override
   Widget build(BuildContext context) {
@@ -40,6 +43,9 @@ class _LoginScreenState extends State<LoginScreen> {
               case GitHubSignInResultStatus.ok:
                 debugPrint(result.token);
                 isSignSuccess = true;
+                debugPrint('Application Token -> ${result.token}');
+                _keyValueStorageService.setAuthToken(result.token.toString());
+                _keyValueStorageService.setAuthState();
                 setState(() {
                   Navigator.pushNamed(context, RouteConstants.homeScreen);
                 });

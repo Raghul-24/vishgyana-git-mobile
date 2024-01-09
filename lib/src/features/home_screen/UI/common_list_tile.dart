@@ -50,7 +50,7 @@ class CommonListTile extends StatelessWidget {
                 color: isHeader! == true?AppColors.whiteColor:Colors.transparent,
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
               ),
-              child: Text(subtitleName!),
+              child: Text(subtitleName == "null"?"Personal":subtitleName!),
             ),
           ),
         ),
